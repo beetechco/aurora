@@ -21,6 +21,7 @@
   "homepage": "https://github.com/sjimenezs/aurora#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "react": "^16.7.0",
     "rollup": "^0.68.2",
     "rollup-plugin-babel": "^4.1.0",
     "rollup-plugin-includepaths": "^0.2.3",
