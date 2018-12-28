@@ -7,7 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/rollup/bin/rollup -c --format es --config rollup.config.js",
-    "watch": "./node_modules/rollup/bin/rollup -wc --format es --config rollup.config.js"
+    "watch": "./node_modules/rollup/bin/rollup -wc --format es --config rollup.config.js",
+    "build-example": "./node_modules/rollup/bin/rollup -c --format cjs --config rollup-example.config.js",
+    "example": "node ./example/build/aurora.cjs"
   },
   "repository": {
     "type": "git",
@@ -19,8 +21,17 @@
     "url": "https://github.com/sjimenezs/aurora/issues"
   },
   "homepage": "https://github.com/sjimenezs/aurora#readme",
+  "dependencies": {
+    "@types/jsdom": "^12.2.1",
+    "@types/react-dom": "^16.0.11",
+    "immutable": "^4.0.0-rc.12",
+    "jsdom": "^13.1.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@types/react": "^16.7.18",
     "rollup": "^0.68.2",
     "rollup-plugin-babel": "^4.1.0",
     "rollup-plugin-includepaths": "^0.2.3",

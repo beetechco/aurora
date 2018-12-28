@@ -1,1 +1,5 @@
-export const greet = () => console.log('Hello, world!')
+import ui from './ui/index'
+
+export default {
+  ui,
+};

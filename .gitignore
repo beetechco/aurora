@@ -1,8 +1,10 @@
+npm-debug.log
 node_modules/
 .node_modules/
 .rpt2_cache/
 built/*
 dist/*
+example/build/*
 tests/cases/rwc/*
 tests/cases/test262/*
 tests/cases/perf/*
@@ -78,4 +80,3 @@ tests/cases/user/*/**/*.d.ts
 tests/baselines/reference/dt
 .failed-tests
 TEST-results.xml
-package-lock.json
