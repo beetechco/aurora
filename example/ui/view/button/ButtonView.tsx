@@ -65,6 +65,12 @@ class ButtonComponent extends React.Component<IButtonComponentProps, IButtonComp
   };
 
   render(): any {
-    return (<button id='boton' onClick={this.onClick}>{this.state.label}</button>);
+    return (
+      <button
+        id='button'
+        onClick={this.onClick}>
+        {this.state.label}
+      </button>
+    );
   }
 }
