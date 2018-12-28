@@ -1,22 +1,24 @@
 import * as React from 'react';
 import IView from 'ui/component/view/IView';
+import View from '../View';
 import IComponentView from 'ui/component/view/IComponentView';
 import ButtonModel from 'ui/widget/button/ButtonModel';
 import { timingSafeEqual } from 'crypto';
 import ActionListener from 'ui/component/common/ActionListener';
 
-export default class ButtonView implements IView<ButtonModel> {
+export default class ButtonView extends View implements IView<ButtonModel> {
   private model: ButtonModel;
   private view: any;
   private elementRef: React.RefObject<any>;
 
   constructor(model: ButtonModel) {
+    super();
     this.model = model;
   }
 
   onAction = () => {
     if (this.model.getActionListeners()) {
-      this.model.getActionListeners().forEach((actionListener: ActionListener) => actionListener.notify());
+      this.model.getActionListeners().forEach((actionListener: ActionListener) => actionListener.actionPerformed());
     }
   }
 
@@ -24,7 +26,7 @@ export default class ButtonView implements IView<ButtonModel> {
     console.log(this.model);
     if (!this.view) {
       this.elementRef = React.createRef();
-      this.view = (<ButtonComponent ref={this.elementRef} label={this.model.getLabel()} onAction={this.onAction} />);
+      this.view = (<ButtonComponent ref={this.elementRef} id={this.getId()} label={this.model.getLabel()} onAction={this.onAction} />);
     }
     return this.view;
   }
@@ -38,9 +40,11 @@ export default class ButtonView implements IView<ButtonModel> {
 
 interface IButtonComponentState {
   label: String;
+
 }
 
 interface IButtonComponentProps {
+  id: String;
   label: String;
   onAction: Function;
 }
@@ -50,7 +54,7 @@ class ButtonComponent extends React.Component<IButtonComponentProps, IButtonComp
 
   constructor(props: any) {
     super(props);
-    this.state = { label: 'INICIAL' };
+    this.state = { label: this.props.label };
     this.changeLabel = this.changeLabel.bind(this);
   }
 
@@ -67,7 +71,7 @@ class ButtonComponent extends React.Component<IButtonComponentProps, IButtonComp
   render(): any {
     return (
       <button
-        id='button'
+        id={`${this.props.id}:button`}
         onClick={this.onClick}>
         {this.state.label}
       </button>

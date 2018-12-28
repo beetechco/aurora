@@ -1,3 +1,3 @@
 export default interface ActionListener {
-  notify(): void;
+  actionPerformed(): void;
 }
