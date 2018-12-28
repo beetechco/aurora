@@ -27,19 +27,19 @@ global.document = dom.window.document;
 global.window = dom.window;
 
 // create ButtonModel
-const model = new ButtonModel();
-model.setLabel('Label 1');
+const buttonModel = new ButtonModel();
+buttonModel.setLabel('Label 1');
 
 // create button view
-const buttonView = new ButtonView(model);
-console.log('button:', model, buttonView);
+const buttonView = new ButtonView(buttonModel);
+console.log('button:', buttonModel, buttonView);
 
 // render
 ReactDOM.render(buttonView.paint(), dom.window.document.getElementById('root'));
 console.log(dom.window.document.body.innerHTML);
 
 // change button label
-model.setLabel('Label 2');
+buttonModel.setLabel('Label 2');
 buttonView.repaint();
 console.log(dom.window.document.body.innerHTML);
 
