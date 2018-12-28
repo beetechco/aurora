@@ -1,3 +1,5 @@
 import ui from './ui/index'
 
-export default { ui };
+export default {
+  ui,
+};

@@ -1,4 +1,5 @@
 import ActionListener from "ui/component/common/ActionListener";
+
 export default class ButtonModel {
   private label: String;
   private listeners: Array<ActionListener> = [];
@@ -15,7 +16,7 @@ export default class ButtonModel {
     this.listeners.push(actionListener);
   }
 
-  public getActionListeners():  Array<ActionListener> {
+  public getActionListeners(): Array<ActionListener> {
     return this.listeners;
   }
 }

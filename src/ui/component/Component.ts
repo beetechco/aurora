@@ -5,14 +5,14 @@ import { randomId } from '../Utils';
 export default class Component<T> {
   private id: String;
   private view: IView<T>;
-  private state: Map<String,any>;
-  private model:T;
+  private state: Map<String, any>;
+  private model: T;
   constructor() {
     this.state = Map<String, any>();
     this.id = randomId();
   }
 
-  public setModel(model:T): void{
+  public setModel(model: T): void {
     this.model = model;
   }
 
@@ -20,6 +20,5 @@ export default class Component<T> {
     return this.model;
   }
 
-  public refreshUI(): void {}
-
+  public refreshUI(): void { }
 }

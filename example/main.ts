@@ -11,7 +11,7 @@ declare global {
     interface Global {
       document: any,
       window: any,
-      navigator: any
+      navigator: any,
     }
   }
 }
