@@ -2,9 +2,6 @@ import * as JSDOM from 'jsdom';
 import * as ReactDOM from 'react-dom';
 import ButtonModel from 'ui/widget/button/ButtonModel';
 import ButtonView from './ui/view/button/ButtonView';
-console.log('iniciando example');
-
-console.log('iniciando dom');
 
 declare global {
   namespace NodeJS {
@@ -16,25 +13,38 @@ declare global {
   }
 }
 
-const dom = new JSDOM.JSDOM('<!doctype html><html><body><div id ="root"><div></body></html>');
+const dom = new JSDOM.JSDOM(`
+<!doctype html>
+<html>
+  <body>
+    <div id ="root">
+    <div>
+  </body>
+</html>`
+);
 
 global.document = dom.window.document;
 global.window = dom.window;
 
+// create ButtonModel
 const model = new ButtonModel();
-model.setLabel('Aceptar');
+model.setLabel('Label 1');
 
+// create button view
 const buttonView = new ButtonView(model);
-
-
-
 console.log('button:', model, buttonView);
+
+// render
 ReactDOM.render(buttonView.paint(), dom.window.document.getElementById('root'));
 console.log(dom.window.document.body.innerHTML);
-model.setLabel('Cambio');
+
+// change button label
+model.setLabel('Label 2');
 buttonView.repaint();
 console.log(dom.window.document.body.innerHTML);
-const boton = dom.window.document.getElementById('boton');
+
+// click button
+const boton = dom.window.document.getElementById('button');
 boton.click();
 
 
