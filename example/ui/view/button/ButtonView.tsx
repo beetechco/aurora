@@ -18,15 +18,24 @@ export default class ButtonView extends View implements IView<ButtonModel> {
 
   onAction = () => {
     if (this.model.getActionListeners()) {
-      this.model.getActionListeners().forEach((actionListener: ActionListener) => actionListener.actionPerformed());
+      this.model.getActionListeners()
+        .forEach((actionListener: ActionListener) =>
+          actionListener.actionPerformed()
+        );
     }
   }
 
   public paint(): any {
-    console.log(this.model);
     if (!this.view) {
       this.elementRef = React.createRef();
-      this.view = (<ButtonComponent ref={this.elementRef} id={this.getId()} label={this.model.getLabel()} onAction={this.onAction} />);
+      this.view = (
+        <ButtonComponent
+          ref={this.elementRef}
+          id={this.getId()}
+          label={this.model.getLabel()}
+          onAction={this.onAction}
+        />
+      );
     }
     return this.view;
   }
@@ -54,12 +63,15 @@ class ButtonComponent extends React.Component<IButtonComponentProps, IButtonComp
 
   constructor(props: any) {
     super(props);
-    this.state = { label: this.props.label };
-    this.changeLabel = this.changeLabel.bind(this);
+    this.state = {
+      label: this.props.label,
+    };
   }
 
-  public changeLabel(label: String): void {
-    this.setState({ label });
+  public changeLabel = (label: String): void => {
+    this.setState({
+      label,
+    });
   }
 
   private onClick = () => {
@@ -72,7 +84,8 @@ class ButtonComponent extends React.Component<IButtonComponentProps, IButtonComp
     return (
       <button
         id={`${this.props.id}:button`}
-        onClick={this.onClick}>
+        onClick={this.onClick}
+      >
         {this.state.label}
       </button>
     );

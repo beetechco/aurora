@@ -21,14 +21,14 @@ const dom = new JSDOM.JSDOM(`
     <div id ="root">
     <div>
   </body>
-</html>`
-);
+</html>
+`);
 
 global.document = dom.window.document;
 global.window = dom.window;
 
-//create listener
-const actionListener = new class implements ActionListener{
+// create listener
+const actionListener = new class implements ActionListener {
   public actionPerformed(): void {
     console.log('button action');
   }
@@ -44,7 +44,10 @@ const buttonView = new ButtonView(buttonModel);
 console.log('button:', buttonModel, buttonView);
 
 // render
-ReactDOM.render(buttonView.paint(), dom.window.document.getElementById('root'));
+ReactDOM.render(
+  buttonView.paint(),
+  dom.window.document.getElementById('root'),
+);
 console.log(dom.window.document.body.innerHTML);
 
 // change button label
@@ -53,8 +56,8 @@ buttonView.repaint();
 console.log(dom.window.document.body.innerHTML);
 
 // click button
-const boton = dom.window.document.getElementById(`${buttonView.getId()}:button`);
-boton.click();
+const button = dom.window.document.getElementById(`${buttonView.getId()}:button`);
+button.click();
 
 
 
