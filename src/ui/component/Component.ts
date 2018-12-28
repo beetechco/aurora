@@ -4,7 +4,7 @@ import { randomId } from '../Utils';
 
 export default class Component<T> {
   private id: String;
-  private view: IView;
+  private view: IView<T>;
   private state: Map<String,any>;
   private model:T;
   constructor() {

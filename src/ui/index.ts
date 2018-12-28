@@ -1,3 +1,5 @@
 import Component from './component/Component';
 
-export default { Component };
+export default {
+  Component,
+ };
