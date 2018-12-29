@@ -11,23 +11,23 @@ export class Component<T> {
     this.id = id;
   }
 
-  public setParent(parent: Component<any>): void {
+  setParent(parent: Component<any>): void {
     this.parent = parent;
   }
 
-  public setModel(model: T): void {
+  setModel(model: T): void {
     this.model = model;
   }
 
-  public getModel(): T {
+  getModel(): T {
     return this.model;
   }
 
-  public getUICode(): String {
+  getUICode(): String {
     return 'UIComponent';
   }
 
-  public getUI(): IView<T> {
+  getUI(): IView<T> {
     if (this.view) {
       return this.view;
     }
@@ -43,7 +43,7 @@ export class Component<T> {
     return this.view;
   }
 
-  public refreshUI(): void {
+  refreshUI(): void {
     if (this.view) {
       this.view.repaint();
     }
