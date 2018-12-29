@@ -1,6 +1,6 @@
-import * as React from 'react';
-
 export default interface IView<T> {
-  paint(): React.Component;
+  getId(): String;
+  setParent(view: IView<any>): void;
+  paint(): any;
   repaint(): void;
 }
