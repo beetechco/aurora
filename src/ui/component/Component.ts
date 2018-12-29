@@ -1,7 +1,7 @@
 import { IView } from './view/IView';
-import UIRegistry from 'ui/UIRegistry';
+import { UIRegistry } from 'ui/UIRegistry';
 
-export default class Component<T> {
+export class Component<T> {
   private id: String;
   private view: IView<T> = null;
   private model: T;
@@ -23,7 +23,7 @@ export default class Component<T> {
     return this.model;
   }
 
-  public getUICode(): String{
+  public getUICode(): String {
     return 'UIComponent';
   }
 

@@ -1,4 +1,4 @@
-import Component from '../../component/Component';
+import { Component } from '../../component/Component';
 import { ButtonModel } from './ButtonModel';
 
 export class Button extends Component<ButtonModel> {

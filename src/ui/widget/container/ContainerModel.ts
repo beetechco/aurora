@@ -1,4 +1,4 @@
-import Component from 'ui/component/Component';
+import { Component } from 'ui/component/Component';
 
 export class ContainerModel {
   private elements: Array<Component<any>> = [];

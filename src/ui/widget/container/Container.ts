@@ -1,4 +1,4 @@
-import Component from '../../component/Component';
+import { Component } from '../../component/Component';
 import { ContainerModel } from './ContainerModel';
 
 export class Container extends Component<ContainerModel> {

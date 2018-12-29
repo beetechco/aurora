@@ -1,3 +1,3 @@
-export default interface ActionListener {
+export interface ActionListener {
   actionPerformed(): void;
 }

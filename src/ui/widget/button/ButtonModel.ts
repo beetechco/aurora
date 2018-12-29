@@ -1,4 +1,4 @@
-import ActionListener from 'ui/component/common/ActionListener';
+import { ActionListener } from 'ui/component/common/ActionListener';
 
 export class ButtonModel {
   private label: string;

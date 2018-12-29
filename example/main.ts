@@ -6,8 +6,8 @@ import { CustomButtonView } from './ui/view/button/CustomButtonView';
 import { ContainerModel } from 'ui/widget/container/ContainerModel';
 import { ContainerView } from 'ui/view/container/ContainerView';
 import { CustomContainerView } from './ui/view/container/CustomContainerView';
-import ActionListener from 'ui/component/common/ActionListener';
-import UIRegistry from 'ui/UIRegistry';
+import { ActionListener } from 'ui/component/common/ActionListener';
+import { UIRegistry } from 'ui/UIRegistry';
 import { Button } from 'ui/widget/button/Button';
 import { Container } from 'ui/widget/container/Container';
 

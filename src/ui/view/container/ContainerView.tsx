@@ -2,7 +2,7 @@ import * as React from 'react';
 import { IView } from 'ui/component/view/IView';
 import { View } from '../View';
 import { ContainerModel } from 'ui/widget/container/ContainerModel';
-import Component from 'ui/component/Component';
+import { Component } from 'ui/component/Component';
 import { ContainerComponent } from './ContainerComponent';
 
 export class ContainerView extends View implements IView<ContainerModel> {
