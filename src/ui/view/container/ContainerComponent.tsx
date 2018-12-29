@@ -1,5 +1,5 @@
 import * as React from 'react';
-import IView from 'ui/component/view/IView';
+import { IView } from 'ui/component/view/IView';
 
 interface IContainerComponentState {
   elements: Array<IView<any>>;

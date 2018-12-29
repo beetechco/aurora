@@ -1,4 +1,4 @@
-import IView from './view/IView';
+import { IView } from './view/IView';
 import UIRegistry from 'ui/UIRegistry';
 
 export default class Component<T> {

@@ -1,4 +1,4 @@
-import IView from 'ui/component/view/IView';
+import { IView } from 'ui/component/view/IView';
 
 export default class UIRegistry {
   private static registry: any = {};
