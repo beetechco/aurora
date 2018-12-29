@@ -1,15 +1,18 @@
-import { Map } from 'immutable';
-import IView from './view/IView';
-import { randomId } from '../Utils';
+import IView from "./view/IView";
+import UIRegistry from "ui/UIRegistry";
 
 export default class Component<T> {
   private id: String;
-  private view: IView<T>;
-  private state: Map<String, any>;
+  private view: IView<T> = null;
   private model: T;
-  constructor() {
-    this.state = Map<String, any>();
-    this.id = randomId();
+  private parent: Component<any>;
+
+  constructor(id: String) {
+    this.id = id;
+  }
+
+  public setParent(parent: Component<any>): void {
+    this.parent = parent;
   }
 
   public setModel(model: T): void {
@@ -20,5 +23,29 @@ export default class Component<T> {
     return this.model;
   }
 
-  public refreshUI(): void { }
+  public getUICode(): String{
+    return "UIComponent";
+  }
+
+  public getUI(): IView<T> {
+    if (this.view) {
+      return this.view;
+    }
+
+    if (this.getUICode()) {
+      const view: Function = UIRegistry.getView(this.getUICode() as string);
+      this.view = view(this.id, this.model) as IView<T>;
+      if (this.parent) {
+        this.view.setParent(this.parent.getUI());
+      }
+    }
+
+    return this.view;
+  }
+
+  public refreshUI(): void {
+    if (this.view) {
+      this.view.repaint();
+    }
+  }
 }
