@@ -15,7 +15,7 @@ export class ButtonComponent extends React.Component<
   IButtonComponentProps,
   IButtonComponentState
   > {
-  constructor(props: any) {
+  constructor(props: IButtonComponentProps) {
     super(props);
     this.state = {
       label: this.props.label,
@@ -34,7 +34,7 @@ export class ButtonComponent extends React.Component<
     }
   };
 
-  render(): any {
+  render() {
     return (
       <button
         id={`${this.props.id}:button`}
