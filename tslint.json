@@ -17,7 +17,7 @@
     "curly": [true, "ignore-same-line"],
     "deprecation": true,
     "forin": true,
-    "interface-name": [true, "never-prefix"],
+    "interface-name": [true, "always-prefix"],
     "jsdoc-format": true,
     "label-position": true,
     "member-access": [true, "no-public"],
