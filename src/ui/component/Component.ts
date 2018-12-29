@@ -2,12 +2,12 @@ import { IView } from './view/IView';
 import { UIRegistry } from 'ui/UIRegistry';
 
 export class Component<T> {
-  private id: String;
+  private id: string;
   private view: IView<T> = null;
   private model: T;
   private parent: Component<any>;
 
-  constructor(id: String) {
+  constructor(id: string) {
     this.id = id;
   }
 
@@ -23,7 +23,7 @@ export class Component<T> {
     return this.model;
   }
 
-  getUICode(): String {
+  getUICode(): string {
     return 'UIComponent';
   }
 
