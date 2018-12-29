@@ -1,11 +1,11 @@
-import * as JSDOM from "jsdom";
-import * as ReactDOM from "react-dom";
-import { ButtonModel } from "ui/widget/button/ButtonModel";
-import { ButtonView } from "ui/view/button/ButtonView";
-import { CustomButtonView } from "./ui/view/button/CustomButtonView";
-import ActionListener from "ui/component/common/ActionListener";
-import UIRegistry from "ui/UIRegistry";
-import { Button } from "ui/widget/button/Button";
+import * as JSDOM from 'jsdom';
+import * as ReactDOM from 'react-dom';
+import { ButtonModel } from 'ui/widget/button/ButtonModel';
+import { ButtonView } from 'ui/view/button/ButtonView';
+import { CustomButtonView } from './ui/view/button/CustomButtonView';
+import ActionListener from 'ui/component/common/ActionListener';
+import UIRegistry from 'ui/UIRegistry';
+import { Button } from 'ui/widget/button/Button';
 
 declare global {
   namespace NodeJS {
@@ -21,7 +21,7 @@ const dom = new JSDOM.JSDOM(`
 <!doctype html>
 <html>
   <body>
-    <div id ="root">
+    <div id ='root'>
     <div>
   </body>
 </html>
@@ -38,25 +38,25 @@ UIRegistry.register(Button.UICODE as string, (id: string, model: any) => {
 // create listener
 const actionListener = new class implements ActionListener {
   actionPerformed(): void {
-    console.log("button action");
+    console.log('button action');
   }
 }();
 
 // create ButtonModel
 const buttonModel = new ButtonModel();
-buttonModel.setLabel("Label 1");
+buttonModel.setLabel('Label 1');
 buttonModel.addActionListener(actionListener);
 
 // create custom button view
-const buttonView = new CustomButtonView("button", buttonModel);
-console.log("button:", buttonModel, buttonView);
+const buttonView = new CustomButtonView('button', buttonModel);
+console.log('button:', buttonModel, buttonView);
 
 // render
-ReactDOM.render(buttonView.paint(), dom.window.document.getElementById("root"));
+ReactDOM.render(buttonView.paint(), dom.window.document.getElementById('root'));
 console.log(dom.window.document.body.innerHTML);
 
 // change button label
-buttonModel.setLabel("Label 2");
+buttonModel.setLabel('Label 2');
 buttonView.repaint();
 console.log(dom.window.document.body.innerHTML);
 

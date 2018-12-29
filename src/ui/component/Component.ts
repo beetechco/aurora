@@ -1,5 +1,5 @@
-import IView from "./view/IView";
-import UIRegistry from "ui/UIRegistry";
+import IView from './view/IView';
+import UIRegistry from 'ui/UIRegistry';
 
 export default class Component<T> {
   private id: String;
@@ -24,7 +24,7 @@ export default class Component<T> {
   }
 
   public getUICode(): String{
-    return "UIComponent";
+    return 'UIComponent';
   }
 
   public getUI(): IView<T> {

@@ -1,6 +1,6 @@
-import * as React from "react";
-import { ButtonView } from "ui/view/button/ButtonView";
-import { ButtonModel } from "ui/widget/button/ButtonModel";
+import * as React from 'react';
+import { ButtonView } from 'ui/view/button/ButtonView';
+import { ButtonModel } from 'ui/widget/button/ButtonModel';
 
 export class CustomButtonView extends ButtonView {
   constructor(id: string, model: ButtonModel) {

@@ -1,9 +1,9 @@
-import * as React from "react";
-import IView from "ui/component/view/IView";
-import { View } from "../View";
-import { ButtonModel } from "ui/widget/button/ButtonModel";
-import ActionListener from "ui/component/common/ActionListener";
-import { ButtonComponent } from "./ButtonComponent";
+import * as React from 'react';
+import IView from 'ui/component/view/IView';
+import { View } from '../View';
+import { ButtonModel } from 'ui/widget/button/ButtonModel';
+import ActionListener from 'ui/component/common/ActionListener';
+import { ButtonComponent } from './ButtonComponent';
 
 export class ButtonView extends View implements IView<ButtonModel> {
   model: ButtonModel;
