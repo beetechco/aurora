@@ -10,7 +10,7 @@ Widget oriented framework. Is a work in progress, all contributions are welcome.
 
 ### Build framework
 
-    $ npm build
+    $ npm run build
 
 You can also start a watcher process that will do a rebuild whenever one of the files changes:
 
@@ -20,7 +20,7 @@ You can also start a watcher process that will do a rebuild whenever one of the 
 
 ### Build example
 
-    $ npm build-example
+    $ npm run build-example
 
 ### Run example
 
