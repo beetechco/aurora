@@ -1,5 +1,5 @@
 export default interface IView<T> {
-  getId(): String;
+  getId(): string;
   setParent(view: IView<any>): void;
   paint(): any;
   repaint(): void;

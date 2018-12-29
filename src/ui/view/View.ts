@@ -1,10 +1,11 @@
 import { randomId } from 'ui/Utils';
 import IView from 'ui/component/view/IView';
-export default class View {
-  private id: String;
+
+export class View {
+  private id: string;
   private parent: IView<any>;
 
-  constructor(id: String) {
+  constructor(id: string) {
     if (id) {
       this.id = id;
     } else {
@@ -12,14 +13,14 @@ export default class View {
     }
   }
 
-  public getId(): String {
+  getId(): string {
     if (this.parent) {
       return `${this.parent.getId()}::${this.id}`;
     }
     return this.id;
   }
 
-  public setParent(parent: IView<any>): void {
+  setParent(parent: IView<any>): void {
     this.parent = parent;
   }
 }

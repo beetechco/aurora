@@ -1,22 +1,22 @@
-import ActionListener from "ui/component/common/ActionListener";
+import ActionListener from 'ui/component/common/ActionListener';
 
-export default class ButtonModel {
-  private label: String;
-  private listeners: Array<ActionListener> = [];
+export class ButtonModel {
+  private label: string;
+  private listeners: ActionListener[] = [];
 
-  public setLabel(label: String): void {
+  setLabel(label: string): void {
     this.label = label;
   }
 
-  public getLabel(): String {
+  getLabel(): string {
     return this.label;
   }
 
-  public addActionListener(actionListener: ActionListener): void {
+  addActionListener(actionListener: ActionListener): void {
     this.listeners.push(actionListener);
   }
 
-  public getActionListeners(): Array<ActionListener> {
+  getActionListeners(): Array<ActionListener> {
     return this.listeners;
   }
 }
