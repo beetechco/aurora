@@ -1,13 +1,13 @@
 import Component from "../../component/Component";
-import ButtonModel from "./ButtonModel";
+import { ButtonModel } from "./ButtonModel";
 
-export default class Button extends Component<ButtonModel> {
-  public static UICODE: String = "BUTTON";
+export class Button extends Component<ButtonModel> {
+  static UICODE: string = "BUTTON";
   constructor(id: String) {
     super(id);
   }
 
-  public getUICode(): String {
+  getUICode(): string {
     return Button.UICODE;
   }
 }
