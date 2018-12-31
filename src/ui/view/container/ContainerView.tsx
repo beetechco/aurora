@@ -10,7 +10,7 @@ export class ContainerView extends View implements IView<ContainerModel> {
   view: any;
   elementRef: React.RefObject<any>;
 
-  constructor(id: string, model: ContainerModel) {
+  constructor(model: ContainerModel, id?: string) {
     super(id);
     this.model = model;
   }

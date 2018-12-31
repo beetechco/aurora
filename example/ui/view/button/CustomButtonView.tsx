@@ -3,8 +3,8 @@ import { ButtonView } from 'ui/view/button/ButtonView';
 import { ButtonModel } from 'ui/widget/button/ButtonModel';
 
 export class CustomButtonView extends ButtonView {
-  constructor(id: string, model: ButtonModel) {
-    super(id, model);
+  constructor(model: ButtonModel, id?: string) {
+    super(model, id);
   }
   
   renderComponent = () => {
