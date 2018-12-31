@@ -2,8 +2,8 @@ npm-debug.log
 node_modules/
 .node_modules/
 .rpt2_cache/
-built/*
-dist/*
+build/
+dist/
 example/build/*
 tests/cases/rwc/*
 tests/cases/test262/*
