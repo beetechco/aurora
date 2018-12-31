@@ -14,4 +14,8 @@ module.exports = {
     "json",
     "node"
   ],
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ],
 }
