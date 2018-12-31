@@ -10,7 +10,7 @@ export class ButtonView extends View implements IView<ButtonModel> {
   view: any;
   elementRef: React.RefObject<any>;
 
-  constructor(id: string, model: ButtonModel) {
+  constructor(model: ButtonModel, id?: string) {
     super(id);
     this.model = model;
   }

@@ -11,10 +11,6 @@ export class Component<T> {
     this.id = id;
   }
 
-  setParent(parent: Component<any>): void {
-    this.parent = parent;
-  }
-
   setModel(model: T): void {
     this.model = model;
   }
@@ -23,20 +19,28 @@ export class Component<T> {
     return this.model;
   }
 
+  setParent(parent: Component<any>): void {
+    this.parent = parent;
+  }
+
+  getParent(): Component<any> {
+    return this.parent;
+  }
+
   getUICode(): string {
     return 'UIComponent';
   }
 
   getUI(): IView<T> {
-    if (this.view) {
-      return this.view;
-    }
-
-    if (this.getUICode()) {
+    if (!this.view && !!this.getUICode()) {
       const view: Function = UIRegistry.getView(this.getUICode() as string);
-      this.view = view(this.id, this.model) as IView<T>;
-      if (this.parent) {
-        this.view.setParent(this.parent.getUI());
+      
+      if (view) {
+        this.view = view(this.id, this.model) as IView<T>;
+
+        if (this.parent) {
+          this.view.setParent(this.parent.getUI());
+        }
       }
     }
 

@@ -16,6 +16,10 @@ You can also start a watcher process that will do a rebuild whenever one of the 
 
     $ npm run watch
 
+### Run tests
+    
+    $ npm run test
+
 ## Running the example
 
 ### Build example

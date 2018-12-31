@@ -37,14 +37,14 @@ global.window = dom.window;
 //Register UI Views
 UIRegistry.register(
   Button.UICODE as string,
-  (id: string, model: any) => {
-    return new CustomButtonView(id, model);
+  (model: any, id: string) => {
+    return new CustomButtonView(model, id);
   });
 
 UIRegistry.register(
   Container.UICODE as string,
-  (id: string, model: any) => {
-    return new CustomContainerView(id, model);
+  (model: any, id: string) => {
+    return new CustomContainerView(model, id);
   }
 );
 
@@ -61,7 +61,7 @@ buttonModel.setLabel('Label 1');
 buttonModel.addActionListener(actionListener);
 
 // create custom button view
-const buttonView = new CustomButtonView('button', buttonModel);
+const buttonView = new CustomButtonView(buttonModel, 'button');
 console.log('button:', buttonModel, buttonView);
 
 // render
@@ -85,7 +85,7 @@ button.click();
 const containerModel = new ContainerModel();
 
 // create container view
-const containerView = new CustomContainerView('container', containerModel);
+const containerView = new CustomContainerView(containerModel, 'container');
 
 // render
 ReactDOM.render(
