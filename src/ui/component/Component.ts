@@ -36,7 +36,7 @@ export class Component<T> {
       const view: Function = UIRegistry.getView(this.getUICode() as string);
       
       if (view) {
-        this.view = view(this.id, this.model) as IView<T>;
+        this.view = view(this.model, this.id) as IView<T>;
 
         if (this.parent) {
           this.view.setParent(this.parent.getUI());
