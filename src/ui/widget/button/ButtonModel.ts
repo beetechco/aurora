@@ -1,6 +1,7 @@
 import { ActionListener } from 'ui/component/common/ActionListener';
+import { Model } from 'ui/component/model/Model';
 
-export class ButtonModel {
+export class ButtonModel extends Model {
   private label: string;
   private listeners: ActionListener[] = [];
 
