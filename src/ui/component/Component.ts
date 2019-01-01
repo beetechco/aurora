@@ -1,11 +1,12 @@
 import { IView } from './view/IView';
 import { UIRegistry } from 'ui/UIRegistry';
+import { IModel } from './model/IModel';
 
 export class Component<T> {
   private id: string;
   private view: IView<T> = null;
   private model: T;
-  private parent: Component<any>;
+  private parent: Component<IModel>;
 
   constructor(id: string) {
     this.id = id;
@@ -19,11 +20,11 @@ export class Component<T> {
     return this.model;
   }
 
-  setParent(parent: Component<any>): void {
+  setParent(parent: Component<IModel>): void {
     this.parent = parent;
   }
 
-  getParent(): Component<any> {
+  getParent(): Component<IModel> {
     return this.parent;
   }
 

@@ -1,6 +1,7 @@
 import { Component } from 'ui/component/Component';
+import { Model } from 'ui/component/model/Model';
 
-export class ContainerModel {
+export class ContainerModel extends Model {
   private elements: Array<Component<any>> = [];
 
   addElement(element: Component<any>): void {
