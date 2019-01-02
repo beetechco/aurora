@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should call an action on click 1`] = `
+<button
+  id="testButton:button"
+  onClick={[Function]}
+>
+  label
+</button>
+`;
+
+exports[`should change label 1`] = `
+<button
+  id="testButton:button"
+  onClick={[Function]}
+>
+  newLabel
+</button>
+`;
