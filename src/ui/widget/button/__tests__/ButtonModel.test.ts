@@ -1,5 +1,5 @@
 import { ButtonModel } from '../ButtonModel';
-import { IActionListener } from 'ui/component/common/IActionListener';
+import { ActionListenerMock } from '__mocks__/ActionListenerMock';
 
 const buttonModel = new ButtonModel();
 
@@ -14,13 +14,7 @@ describe('label', () => {
 });
 
 describe('add/get action listeners', () => {
-  class ActionListener implements IActionListener {
-    actionPerformed = (): boolean => {
-      return true;
-    }
-  }
-  
-  const actionListener1 = new ActionListener();
+  const actionListener1 = new ActionListenerMock();
 
   it('should add a listener and return an array with the listener', () => {
     buttonModel.addActionListener(actionListener1);
@@ -32,7 +26,7 @@ describe('add/get action listeners', () => {
   });
 
   it('should add a second listener and return an array with the two listeners', () => {
-    const actionListener2 = new ActionListener();
+    const actionListener2 = new ActionListenerMock();
 
     buttonModel.addActionListener(actionListener2);
 
