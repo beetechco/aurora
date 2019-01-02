@@ -1,9 +1,9 @@
-import { ActionListener } from 'ui/component/common/ActionListener';
+import { IActionListener } from 'ui/component/common/IActionListener';
 import { Model } from 'ui/component/model/Model';
 
 export class ButtonModel extends Model {
   private label: string;
-  private listeners: ActionListener[] = [];
+  private listeners: IActionListener[] = [];
 
   setLabel(label: string): void {
     this.label = label;
@@ -13,11 +13,11 @@ export class ButtonModel extends Model {
     return this.label;
   }
 
-  addActionListener(actionListener: ActionListener): void {
+  addActionListener(actionListener: IActionListener): void {
     this.listeners.push(actionListener);
   }
 
-  getActionListeners(): ActionListener[] {
+  getActionListeners(): IActionListener[] {
     return this.listeners;
   }
 }
