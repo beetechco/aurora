@@ -17,7 +17,7 @@ export class ButtonModel extends Model {
     this.listeners.push(actionListener);
   }
 
-  getActionListeners(): Array<ActionListener> {
+  getActionListeners(): ActionListener[] {
     return this.listeners;
   }
 }
