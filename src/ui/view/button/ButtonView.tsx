@@ -2,7 +2,7 @@ import * as React from 'react';
 import { IView } from 'ui/component/view/IView';
 import { View } from '../View';
 import { ButtonModel } from 'ui/widget/button/ButtonModel';
-import { ActionListener } from 'ui/component/common/ActionListener';
+import { IActionListener } from 'ui/component/common/IActionListener';
 import { ButtonComponent } from './ButtonComponent';
 
 export class ButtonView extends View implements IView<ButtonModel> {
@@ -19,7 +19,7 @@ export class ButtonView extends View implements IView<ButtonModel> {
     if (this.model.getActionListeners()) {
       this.model
         .getActionListeners()
-        .forEach((actionListener: ActionListener) =>
+        .forEach((actionListener: IActionListener) =>
           actionListener.actionPerformed()
         );
     }

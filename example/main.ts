@@ -6,7 +6,7 @@ import { CustomButtonView } from './ui/view/button/CustomButtonView';
 import { ContainerModel } from 'ui/widget/container/ContainerModel';
 import { ContainerView } from 'ui/view/container/ContainerView';
 import { CustomContainerView } from './ui/view/container/CustomContainerView';
-import { ActionListener } from 'ui/component/common/ActionListener';
+import { IActionListener } from 'ui/component/common/IActionListener';
 import { UIRegistry } from 'ui/UIRegistry';
 import { Button } from 'ui/widget/button/Button';
 import { Container } from 'ui/widget/container/Container';
@@ -49,7 +49,7 @@ UIRegistry.register(
 );
 
 // create listener
-const actionListener = new class implements ActionListener {
+const actionListener = new class implements IActionListener {
   actionPerformed(): void {
     console.log('button action');
   }
