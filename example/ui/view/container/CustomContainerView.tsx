@@ -35,7 +35,7 @@ interface IContainerComponentProps {
   elements: Array<IView<any>>;
 }
 
-export class ContainerComponent extends React.Component<
+class ContainerComponent extends React.Component<
   IContainerComponentProps,
   IContainerComponentState
   > {
