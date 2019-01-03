@@ -3,7 +3,6 @@ import { IView } from 'ui/component/view/IView';
 import { View } from '../View';
 import { ContainerModel } from 'ui/widget/container/ContainerModel';
 import { Component } from 'ui/component/Component';
-import { ContainerComponent } from './ContainerComponent';
 
 export class ContainerView extends View implements IView<ContainerModel> {
   model: ContainerModel;
@@ -17,17 +16,18 @@ export class ContainerView extends View implements IView<ContainerModel> {
 
   renderComponent = () => {
     return (
-      <ContainerComponent
+      <div
         ref={this.elementRef}
         id={this.getId()}
-        elements={
+      >
+        {
           this.model
             .getElements()
             .map((component: Component<any>) =>
-              component.getUI()
+              component.getUI().paint()
             )
         }
-      />
+      </div>
     );
   }
 
@@ -40,15 +40,5 @@ export class ContainerView extends View implements IView<ContainerModel> {
     return this.view;
   }
 
-  repaint = () => {
-    if (this.elementRef && this.elementRef.current) {
-      this.elementRef.current.changeElements(
-        this.model
-          .getElements()
-          .map((component: Component<any>) =>
-            component.getUI()
-          )
-      );
-    }
-  }
+  repaint = () => {}
 }

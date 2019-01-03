@@ -24,6 +24,18 @@ export class CustomContainerView extends ContainerView {
       />
     );
   }
+
+  repaint = () => {
+    if (this.elementRef && this.elementRef.current) {
+      this.elementRef.current.changeElements(
+        this.model
+          .getElements()
+          .map((component: Component<any>) =>
+            component.getUI()
+          )
+      );
+    }
+  }
 }
 
 interface IContainerComponentState {

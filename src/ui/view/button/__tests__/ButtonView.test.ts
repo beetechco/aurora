@@ -45,7 +45,6 @@ describe('render view', () => {
   let document: Document;
   let buttonModel: ButtonModel;
   let buttonView: ButtonView;
-  let button: React.ReactElement<{}>;
 
   beforeEach(() => {
     const dom = testDom();
@@ -53,27 +52,24 @@ describe('render view', () => {
 
     buttonModel = new ButtonModel();
     buttonView = new ButtonView(buttonModel);
-    button = buttonView.paint();
+  });
+
+  it('should paint a react element with a label', () => {
+    const label = 'label';
+    buttonModel.setLabel(label);
+
+    const button: React.ReactElement<{}> = buttonView.paint();
 
     ReactDOM.render(
       button,
       document.getElementById('root'),
     );
-  });
 
-  it('should paint a react element', () => {
     expect(React.isValidElement(button)).toBeTruthy();
-  });
-
-  it('should set a label after repaint the view', () => {
-    const label = 'label';
-
-    buttonModel.setLabel(label);
-    buttonView.repaint();
 
     expect(
       document.getElementById(
-        `${buttonView.getId()}:button`
+        `${buttonView.getId()}`
       ).innerHTML
     ).toBe(label);
   });
@@ -107,7 +103,7 @@ describe('action listener', () => {
 
     // emulate click
     document.getElementById(
-      `${buttonView.getId()}:button`
+      `${buttonView.getId()}`
     ).click();
 
     expect(action).toBeCalledTimes(1);

@@ -17,6 +17,12 @@ export class CustomButtonView extends ButtonView {
       />
     );
   }
+
+  repaint = () => {
+    if (this.elementRef && this.elementRef.current) {
+      this.elementRef.current.changeLabel(this.model.getLabel());
+    }
+  }
 }
 
 interface IButtonComponentState {

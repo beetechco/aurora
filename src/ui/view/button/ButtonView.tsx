@@ -3,7 +3,6 @@ import { IView } from 'ui/component/view/IView';
 import { View } from '../View';
 import { ButtonModel } from 'ui/widget/button/ButtonModel';
 import { IActionListener } from 'ui/component/common/IActionListener';
-import { ButtonComponent } from './ButtonComponent';
 
 export class ButtonView extends View implements IView<ButtonModel> {
   model: ButtonModel;
@@ -27,12 +26,13 @@ export class ButtonView extends View implements IView<ButtonModel> {
 
   renderComponent = () => {
     return (
-      <ButtonComponent
+      <div
         ref={this.elementRef}
         id={this.getId()}
-        label={this.model.getLabel()}
-        onAction={this.onAction}
-      />
+        onClick={this.onAction}
+      >
+        {this.model.getLabel()}
+      </div>
     );
   }
 
@@ -45,9 +45,5 @@ export class ButtonView extends View implements IView<ButtonModel> {
     return this.view;
   }
 
-  repaint = () => {
-    if (this.elementRef && this.elementRef.current) {
-      this.elementRef.current.changeLabel(this.model.getLabel());
-    }
-  }
+  repaint = () => {}
 }
