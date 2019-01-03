@@ -24,6 +24,18 @@ export class CustomContainerView extends ContainerView {
       />
     );
   }
+
+  repaint = () => {
+    if (this.elementRef && this.elementRef.current) {
+      this.elementRef.current.changeElements(
+        this.model
+          .getElements()
+          .map((component: Component<any>) =>
+            component.getUI()
+          )
+      );
+    }
+  }
 }
 
 interface IContainerComponentState {
@@ -35,7 +47,7 @@ interface IContainerComponentProps {
   elements: Array<IView<any>>;
 }
 
-export class ContainerComponent extends React.Component<
+class ContainerComponent extends React.Component<
   IContainerComponentProps,
   IContainerComponentState
   > {
