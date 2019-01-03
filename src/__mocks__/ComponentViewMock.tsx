@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { IView } from 'ui/component/view/IView';
-import { View } from '../View';
-import { ContainerModel } from 'ui/widget/container/ContainerModel';
+import { View } from 'ui/view/View';
+import { Model } from 'ui/component/model/Model';
 import { Component } from 'ui/component/Component';
 
-export class ContainerView extends View implements IView<ContainerModel> {
-  model: ContainerModel;
+export class ComponentViewMock extends View implements IView<Model> {
+  model: Model;
   view: any;
   elementRef: React.RefObject<any>;
 
-  constructor(model: ContainerModel, id?: string) {
+  constructor(model: Model, id?: string) {
     super(id);
     this.model = model;
   }
@@ -19,14 +19,8 @@ export class ContainerView extends View implements IView<ContainerModel> {
       <div
         ref={this.elementRef}
         id={this.getId()}
+        key={this.getId()}
       >
-        {
-          this.model
-            .getElements()
-            .map((component: Component<any>) =>
-              component.getUI().paint()
-            )
-        }
       </div>
     );
   }
@@ -41,6 +35,6 @@ export class ContainerView extends View implements IView<ContainerModel> {
   }
 
   repaint = () => {
-    
+
   }
 }

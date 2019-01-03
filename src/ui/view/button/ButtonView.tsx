@@ -45,5 +45,7 @@ export class ButtonView extends View implements IView<ButtonModel> {
     return this.view;
   }
 
-  repaint = () => {}
+  repaint = () => {
+    
+  }
 }
