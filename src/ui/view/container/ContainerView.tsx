@@ -40,5 +40,7 @@ export class ContainerView extends View implements IView<ContainerModel> {
     return this.view;
   }
 
-  repaint = () => {}
+  repaint = () => {
+    
+  }
 }
