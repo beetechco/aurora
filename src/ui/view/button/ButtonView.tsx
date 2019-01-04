@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { IView } from 'ui/component/view/IView';
+import { IView } from '../../component/view/IView';
 import { View } from '../View';
-import { ButtonModel } from 'ui/widget/button/ButtonModel';
-import { IActionListener } from 'ui/component/common/IActionListener';
+import { ButtonModel } from '../../widget/button/ButtonModel';
+import { IActionListener } from '../../component/common/IActionListener';
 
 export class ButtonView extends View implements IView<ButtonModel> {
   model: ButtonModel;
@@ -46,6 +46,6 @@ export class ButtonView extends View implements IView<ButtonModel> {
   }
 
   repaint = () => {
-    
+
   }
 }

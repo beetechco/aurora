@@ -2,13 +2,15 @@
   "name": "aurora",
   "version": "1.0.0",
   "description": "",
-  "main": "./dist/main.es.js",
-  "module": "./dist/main.es.js",
+  "main": "./lib/index.cjs",
+  "module": "./lib/index.es.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "test": "jest --watch",
-    "build": "./node_modules/rollup/bin/rollup -c --format es --config rollup.config.js",
-    "watch": "./node_modules/rollup/bin/rollup -wc --format es --config rollup.config.js",
-    "build-example": "./node_modules/rollup/bin/rollup -c --format cjs --config rollup-example.config.js",
+    "build": "./node_modules/rollup/bin/rollup -c --config rollup.config.js",
+    "build-tsc": "tsc -p tsconfig.json",
+    "watch": "./node_modules/rollup/bin/rollup -wc --config rollup.config.js",
+    "build-example": "./node_modules/rollup/bin/rollup -c --config rollup-example.config.js",
     "example": "node ./example/build/aurora.cjs"
   },
   "repository": {

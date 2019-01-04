@@ -1,5 +1,5 @@
 import { IView } from './view/IView';
-import { UIRegistry } from 'ui/UIRegistry';
+import { UIRegistry } from '../UIRegistry';
 import { IModel } from './model/IModel';
 
 export class Component<T> {
@@ -35,7 +35,7 @@ export class Component<T> {
   getUI(): IView<T> {
     if (!this.view && !!this.getUICode()) {
       const view: Function = UIRegistry.getView(this.getUICode() as string);
-      
+
       if (view) {
         this.view = view(this.model, this.id) as IView<T>;
 

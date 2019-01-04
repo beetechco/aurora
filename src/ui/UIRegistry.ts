@@ -1,8 +1,8 @@
-import { IView } from 'ui/component/view/IView';
+import { IView } from './component/view/IView';
 
 export class UIRegistry {
   private static registry: any = {};
-  
+
   static register(key: string, view: Function): void {
     UIRegistry.registry[key] = view;
   }

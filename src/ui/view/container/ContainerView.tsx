@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { IView } from 'ui/component/view/IView';
+import { IView } from '../../component/view/IView';
 import { View } from '../View';
-import { ContainerModel } from 'ui/widget/container/ContainerModel';
-import { Component } from 'ui/component/Component';
+import { ContainerModel } from '../../widget/container/ContainerModel';
+import { Component } from '../../component/Component';
 
 export class ContainerView extends View implements IView<ContainerModel> {
   model: ContainerModel;
@@ -41,6 +41,6 @@ export class ContainerView extends View implements IView<ContainerModel> {
   }
 
   repaint = () => {
-    
+
   }
 }

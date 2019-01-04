@@ -1,5 +1,5 @@
-import { Component } from 'ui/component/Component';
-import { Model } from 'ui/component/model/Model';
+import { Component } from '../../component/Component';
+import { Model } from '../../component/model/Model';
 
 export class ContainerModel extends Model {
   private elements: Array<Component<any>> = [];

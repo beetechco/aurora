@@ -1,5 +1,5 @@
-import { randomId } from 'ui/Utils';
-import { IView } from 'ui/component/view/IView';
+import { randomId } from '../Utils';
+import { IView } from '../component/view/IView';
 
 export class View {
   private id: string;

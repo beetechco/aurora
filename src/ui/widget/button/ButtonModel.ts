@@ -1,8 +1,8 @@
-import { IActionListener } from 'ui/component/common/IActionListener';
-import { Model } from 'ui/component/model/Model';
+import { IActionListener } from '../../component/common/IActionListener';
+import { Model } from '../../component/model/Model';
 
 export class ButtonModel extends Model {
-  private label: string;
+  private label: string = '';
   private listeners: IActionListener[] = [];
 
   setLabel(label: string): void {
