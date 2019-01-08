@@ -1,5 +1,5 @@
 import { ContainerModel } from '../ContainerModel';
-import { ComponentMock } from '__mocks__/ComponentMock';
+import { ComponentMock } from '../../../../__mocks__/ComponentMock';
 
 const containerModel = new ContainerModel();
 

@@ -1,5 +1,15 @@
 import * as JSDOM from 'jsdom';
 
+declare global {
+  namespace NodeJS {
+    interface Global {
+      document: any;
+      window: any;
+      navigator: any;
+    }
+  }
+}
+
 const html = `
 <!doctype html>
 <html>

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { IView } from '../../component/view/IView';
 import { View } from '../View';
 import { ButtonModel } from '../../widget/button/ButtonModel';
 import { IActionListener } from '../../component/common/IActionListener';

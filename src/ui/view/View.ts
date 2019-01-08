@@ -3,10 +3,10 @@ import { randomId } from '../Utils';
 import { IView } from '../component/view/IView';
 
 export abstract class View {
-  private id: string;
-  private elementRef: React.RefObject<any>;
-  private parent: IView;
-  private view: any;
+  id: string;
+  elementRef: React.RefObject<any>;
+  parent: IView;
+  view: any;
 
   constructor(id: string) {
     if (id) {
