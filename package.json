@@ -38,6 +38,7 @@
     "@types/enzyme-adapter-react-16": "^1.0.3",
     "@types/jest": "^23.3.10",
     "@types/react": "^16.7.18",
+    "barbero": "github:razueroh/barbero",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
     "enzyme-to-json": "^3.3.5",
@@ -50,7 +51,6 @@
     "ts-jest": "^23.10.5",
     "tslib": "^1.9.3",
     "tslint": "^5.12.0",
-    "typescript": "^3.2.2",
-    "barbero": "git+https://git@github.com/razueroh/barbero.git"
+    "typescript": "^3.2.2"
   }
 }
