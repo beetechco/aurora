@@ -1,10 +1,14 @@
 import * as React from 'react';
-import { IView } from 'ui/component/view/IView';
-import { View } from 'ui/view/View';
-import { Model } from 'ui/component/model/Model';
-import { Component } from 'ui/component/Component';
+import { IView } from '../ui/component/view/IView';
+import { View } from '../ui/view/View';
+import { Model } from '../ui/component/model/Model';
+import { Component } from '../ui/component/Component';
 
-export class ComponentViewMock extends View implements IView<Model> {
+export interface IComponentViewMock extends IView {
+
+}
+
+export class ComponentViewMock extends View implements IComponentViewMock {
   model: Model;
   view: any;
   elementRef: React.RefObject<any>;
@@ -35,6 +39,6 @@ export class ComponentViewMock extends View implements IView<Model> {
   }
 
   repaint = () => {
-
+    
   }
 }

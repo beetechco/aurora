@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { ContainerView } from '../ContainerView';
-import { ContainerModel } from 'ui/widget/container/ContainerModel';
-import { testDom } from 'setupTests';
-import { ComponentMock } from '__mocks__/ComponentMock';
-import { ComponentViewMock } from '__mocks__/ComponentViewMock';
-import { Model } from 'ui/component/model/Model';
-import { UIRegistry } from 'ui/UIRegistry';
+import { ContainerModel } from '../../../widget/container/ContainerModel';
+import { testDom } from '../../../../setupTests';
+import { ComponentMock } from '../../../../__mocks__/ComponentMock';
+import { ComponentViewMock } from '../../../../__mocks__/ComponentViewMock';
+import { Model } from '../../../component/model/Model';
+import { UIRegistry } from '../../../UIRegistry';
 
 describe('constructor', () => {
   let containerModel: ContainerModel;

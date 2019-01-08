@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { ButtonView } from '../ButtonView';
-import { ButtonModel } from 'ui/widget/button/ButtonModel';
-import { testDom } from 'setupTests';
-import { ActionListenerMock } from '__mocks__/ActionListenerMock';
+import { ButtonModel } from '../../../widget/button/ButtonModel';
+import { testDom } from '../../../../setupTests';
+import { ActionListenerMock } from '../../../../__mocks__/ActionListenerMock';
 
 describe('constructor', () => {
   let buttonModel: ButtonModel;

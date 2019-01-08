@@ -1,5 +1,5 @@
 import { ButtonModel } from '../ButtonModel';
-import { ActionListenerMock } from '__mocks__/ActionListenerMock';
+import { ActionListenerMock } from '../../../../__mocks__/ActionListenerMock';
 
 const buttonModel = new ButtonModel();
 

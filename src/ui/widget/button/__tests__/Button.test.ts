@@ -1,8 +1,8 @@
-import { Component } from 'ui/component/Component';
+import { Component } from '../../../component/Component';
 import { Button } from '../Button';
 import { ButtonModel } from '../ButtonModel';
-import { ButtonView } from 'ui/view/button/ButtonView';
-import { UIRegistry } from 'ui/UIRegistry';
+import { ButtonView } from '../../../view/button/ButtonView';
+import { UIRegistry } from '../../../UIRegistry';
 
 describe('test button', () => {
   it('should get the UICODE', () => {
@@ -67,7 +67,7 @@ describe('test component inheritance', () => {
       () => buttonView
     );
 
-    const spy = jest.spyOn(buttonView, 'repaint');
+    const spy = jest.spyOn(button.getView(), 'repaint');
 
     button.getUI();
     button.refreshUI();
