@@ -1,0 +1,24 @@
+{
+  "tasks": [
+    {
+      "name": "components",
+      "variables": [
+        {
+          "name": "component", 
+          "description": "Component name"
+        },
+        {
+          "name": "uicode", 
+          "description": "Component UICODE"
+        }
+      ],
+      "templates": [
+        {
+          "inputFile": "./templates/Component.mustache",
+          "outputDir": "./src/ui/widget/{{component}}",
+          "outputFile": "{{component}}.ts"
+        }
+      ]
+    }
+  ]
+}

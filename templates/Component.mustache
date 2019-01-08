@@ -1,0 +1,14 @@
+import { Component } from '../../component/Component';
+import { {{component}}Model } from './{{component}}Model';
+
+export class {{component}} extends Component<{{component}}Model> {
+  static UICODE = '{{uicode}}';
+  
+  constructor(id: string) {
+    super(id);
+  }
+
+  getUICode(): string {
+    return {{component}}.UICODE;
+  }
+}
