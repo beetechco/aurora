@@ -1,9 +1,12 @@
+import * as React from 'react';
 import { randomId } from '../Utils';
 import { IView } from '../component/view/IView';
 
-export class View {
+export abstract class View {
   private id: string;
-  private parent: IView<any>;
+  private elementRef: React.RefObject<any>;
+  private parent: IView;
+  private view: any;
 
   constructor(id: string) {
     if (id) {
@@ -20,7 +23,23 @@ export class View {
     return this.id;
   }
 
-  setParent(parent: IView<any>): void {
+  getElementReference(): React.RefObject<any>{
+    return this.elementRef;
+  }
+
+  paint = () => {
+    if (!this.view) {
+      this.elementRef = React.createRef();
+      this.view = this.renderComponent();
+    }
+    return this.view;
+  }
+
+  abstract renderComponent(): any;
+
+  abstract repaint(): void;
+
+  setParent(parent: IView): void {
     this.parent = parent;
   }
 }

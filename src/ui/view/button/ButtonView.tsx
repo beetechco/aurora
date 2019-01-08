@@ -3,8 +3,9 @@ import { IView } from '../../component/view/IView';
 import { View } from '../View';
 import { ButtonModel } from '../../widget/button/ButtonModel';
 import { IActionListener } from '../../component/common/IActionListener';
+import { IButtonView } from './IButtonView';
 
-export class ButtonView extends View implements IView<ButtonModel> {
+export class ButtonView extends View implements IButtonView {
   model: ButtonModel;
   view: any;
   elementRef: React.RefObject<any>;

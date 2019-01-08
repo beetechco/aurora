@@ -1,6 +1,6 @@
-export interface IView<T> {
+export interface IView {
   getId(): string;
-  setParent(view: IView<any>): void;
+  setParent(view: IView): void;
   paint(): any;
   repaint(): void;
 }
