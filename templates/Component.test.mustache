@@ -1,0 +1,79 @@
+import { Component } from '../../../component/Component';
+import { {{component}} } from '../{{component}}';
+import { {{component}}Model } from '../{{component}}Model';
+import { {{component}}View } from '../../../view/{{folder}}/{{component}}View';
+import { UIRegistry } from '../../../UIRegistry';
+
+describe('test {{component}}', () => {
+  it('should get the UICODE', () => {
+    const component = new {{component}}('{{component}}');
+
+    expect(component.getUICode()).toBe('{{uicode}}');
+  });
+});
+
+describe('test component inheritance', () => {
+  let component: {{component}};
+
+  beforeEach(() => {
+    component = new {{component}}('{{component}}');
+    jest.resetModules();
+  });
+
+  it('should set/get model', () => {
+    const componentModel = new {{component}}Model();
+
+    component.setModel(componentModel);
+
+    expect(component.getModel()).toBe(componentModel);
+  });
+
+
+  it('should set/get parent', () => {
+    const parent = new Component('parent');
+
+    component.setParent(parent);
+
+    expect(component.getParent()).toBe(parent);
+  });
+
+  describe('getUI', () => {
+    it('should get null if the component has no view and is not registered', () => {
+      expect(component.getUI()).toBeNull();
+    });
+
+    it('should get the view if component is registered', () => {
+      let componentView;
+
+      UIRegistry.register(
+        {{component}}.UICODE,
+        (model: {{component}}Model, id: string) => {
+          componentView = new {{component}}View(model, id);
+
+          return componentView;
+        }
+      );
+
+      expect(component.getUI()).toBe(componentView);
+    });
+  });
+
+  it('should call repaint', () => {
+    const componentModel = new {{component}}Model();
+    const componentView = new {{component}}View(componentModel);
+
+    UIRegistry.register(
+      {{component}}.UICODE,
+      () => componentView
+    );
+
+    const spy = jest.spyOn(component.getView(), 'repaint');
+
+    component.getUI();
+    component.refreshUI();
+
+    expect(spy).toHaveBeenCalled();
+
+    spy.mockRestore();
+  });
+});

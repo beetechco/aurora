@@ -4,6 +4,10 @@
       "name": "components",
       "variables": [
         {
+          "name": "folder", 
+          "description": "Component folder"
+        },
+        {
           "name": "component", 
           "description": "Component name"
         },
@@ -15,8 +19,38 @@
       "templates": [
         {
           "inputFile": "./templates/Component.mustache",
-          "outputDir": "./src/ui/widget/{{component}}",
+          "outputDir": "./src/ui/widget/{{folder}}",
           "outputFile": "{{component}}.ts"
+        },
+        {
+          "inputFile": "./templates/Component.test.mustache",
+          "outputDir": "./src/ui/widget/{{folder}}/__tests__",
+          "outputFile": "{{component}}.test.ts"
+        },
+        {
+          "inputFile": "./templates/ComponentModel.mustache",
+          "outputDir": "./src/ui/widget/{{folder}}",
+          "outputFile": "{{component}}Model.ts"
+        },
+        {
+          "inputFile": "./templates/ComponentModel.test.mustache",
+          "outputDir": "./src/ui/widget/{{folder}}/__tests__",
+          "outputFile": "{{component}}Model.test.ts"
+        },
+        {
+          "inputFile": "./templates/ComponentView.mustache",
+          "outputDir": "./src/ui/view/{{folder}}",
+          "outputFile": "{{component}}View.tsx"
+        },
+        {
+          "inputFile": "./templates/IComponentView.mustache",
+          "outputDir": "./src/ui/view/{{folder}}",
+          "outputFile": "I{{component}}View.ts"
+        },
+        {
+          "inputFile": "./templates/ComponentView.test.mustache",
+          "outputDir": "./src/ui/view/{{folder}}/__tests__",
+          "outputFile": "{{component}}View.test.ts"
         }
       ]
     }
