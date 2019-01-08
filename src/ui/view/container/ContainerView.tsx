@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { IView } from '../../component/view/IView';
 import { View } from '../View';
 import { ContainerModel } from '../../widget/container/ContainerModel';
 import { Component } from '../../component/Component';
+import { IContainerView } from './IContainerView';
 
-export class ContainerView extends View implements IView<ContainerModel> {
+export class ContainerView extends View implements IContainerView {
   model: ContainerModel;
   view: any;
   elementRef: React.RefObject<any>;
@@ -23,7 +23,7 @@ export class ContainerView extends View implements IView<ContainerModel> {
         {
           this.model
             .getElements()
-            .map((component: Component<any>) =>
+            .map((component: Component<any, any>) =>
               component.getUI().paint()
             )
         }
