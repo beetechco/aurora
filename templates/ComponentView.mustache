@@ -1,0 +1,39 @@
+import * as React from 'react';
+import { View } from '../View';
+import { {{component}}Model } from '../../widget/{{folder}}/{{component}}Model';
+import { IActionListener } from '../../component/common/IActionListener';
+import { I{{component}}View } from './I{{component}}View';
+
+export class {{component}}View extends View implements I{{component}}View {
+  model: {{component}}Model;
+  view: any;
+  elementRef: React.RefObject<any>;
+
+  constructor(model: {{component}}Model, id?: string) {
+    super(id);
+    this.model = model;
+  }
+
+  renderComponent = () => {
+    return (
+      <div
+        ref={this.elementRef}
+        id={this.getId()}
+      >
+      </div>
+    );
+  }
+
+  paint = () => {
+    if (!this.view) {
+      this.elementRef = React.createRef();
+      this.view = this.renderComponent();
+    }
+
+    return this.view;
+  }
+
+  repaint = () => {
+
+  }
+}
