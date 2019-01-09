@@ -36,21 +36,11 @@
           "inputFile": "./templates/ComponentModel.test.mustache",
           "outputDir": "./src/ui/widget/{{folder}}/__tests__",
           "outputFile": "{{component}}Model.test.ts"
-        },
-        {
-          "inputFile": "./templates/ComponentView.mustache",
-          "outputDir": "./src/ui/view/{{folder}}",
-          "outputFile": "{{component}}View.tsx"
-        },
+        },        
         {
           "inputFile": "./templates/IComponentView.mustache",
           "outputDir": "./src/ui/view/{{folder}}",
           "outputFile": "I{{component}}View.ts"
-        },
-        {
-          "inputFile": "./templates/ComponentView.test.mustache",
-          "outputDir": "./src/ui/view/{{folder}}/__tests__",
-          "outputFile": "{{component}}View.test.ts"
         }
       ]
     }
