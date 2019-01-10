@@ -9,13 +9,8 @@ export interface IComponentViewMock extends IView {
 }
 
 export class ComponentViewMock extends View implements IComponentViewMock {
-  model: Model;
-  view: any;
-  elementRef: React.RefObject<any>;
-
-  constructor(model: Model, id?: string) {
+  constructor(id?: string) {
     super(id);
-    this.model = model;
   }
 
   renderComponent = () => {
@@ -27,15 +22,6 @@ export class ComponentViewMock extends View implements IComponentViewMock {
       >
       </div>
     );
-  }
-
-  paint = () => {
-    if (!this.view) {
-      this.elementRef = React.createRef();
-      this.view = this.renderComponent();
-    }
-
-    return this.view;
   }
 
   repaint = () => {

@@ -1,7 +1,7 @@
 import { Component } from '../../../component/Component';
 import { Button } from '../Button';
 import { ButtonModel } from '../ButtonModel';
-import { ButtonView } from '../../../view/button/ButtonView';
+import { ComponentViewMock } from '../../../../__mocks__/ComponentViewMock';
 import { UIRegistry } from '../../../UIRegistry';
 
 describe('test button', () => {
@@ -47,8 +47,8 @@ describe('test component inheritance', () => {
 
       UIRegistry.register(
         Button.UICODE,
-        (model: ButtonModel, id: string) => {
-          buttonView = new ButtonView(model, id);
+        (id: string) => {
+          buttonView = new ComponentViewMock(id);
 
           return buttonView;
         }
@@ -59,8 +59,7 @@ describe('test component inheritance', () => {
   });
 
   it('should call repaint', () => {
-    const buttonModel = new ButtonModel();
-    const buttonView = new ButtonView(buttonModel);
+    const buttonView = new ComponentViewMock();
 
     UIRegistry.register(
       Button.UICODE,
