@@ -7,6 +7,10 @@ import { IActionListener }  from './ui/component/common/IActionListener';
 export { Model } from './ui/component/model/Model';
 export { Component } from './ui/component/Component';
 export { IModel } from './ui/component/model/IModel';
+export { CommandBar } from './ui/widget/commandbar/CommandBar';
+export { CommandBarModel } from './ui/widget/commandbar/CommandBarModel';
+export { ICommandBarView } from './ui/view/commandbar/ICommandBarView';
+export { Input } from './ui/widget/'
 
 export {
   UIRegistry,
