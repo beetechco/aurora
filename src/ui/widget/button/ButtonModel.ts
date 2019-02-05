@@ -6,30 +6,7 @@ export class ButtonModel extends Model {
   private icon: string;
   private label: string;
   private listeners: IActionListener[] = [];
-
-  setCode(code: string): void {
-    this.code = code;
-  }
-
-  getCode(): string {
-    return this.code;
-  }
-
-  setLabel(label: string): void {
-    this.label = label;
-  }
-
-  getLabel(): string {
-    return this.label;
-  }
-
-  setIcon(icon: string): void {
-    this.icon = icon;
-  }
-
-  getIcon(): string {
-    return this.icon;
-  }
+  private onlyIcon: boolean = false;
 
   addActionListener(actionListener: IActionListener): void {
     this.listeners.push(actionListener);
@@ -38,4 +15,38 @@ export class ButtonModel extends Model {
   getActionListeners(): IActionListener[] {
     return this.listeners;
   }
+
+  getCode(): string {
+    return this.code;
+  }
+
+  getIcon(): string {
+    return this.icon;
+  }
+
+
+  getLabel(): string {
+    return this.label;
+  }
+
+  getOnlyIcon(): boolean {
+    return this.onlyIcon;
+  }
+
+  setCode(code: string): void {
+    this.code = code;
+  }
+
+  setIcon(icon: string): void {
+    this.icon = icon;
+  }
+
+  setLabel(label: string): void {
+    this.label = label;
+  }
+
+  setOnlyIcon(onlyIcon: boolean): void {
+    this.onlyIcon = onlyIcon;
+  }
+
 }

@@ -4,6 +4,7 @@ import { IModel } from './model/IModel';
 
 export class Component<T extends IModel,V extends IView> {
   private id: string;
+  private initialized = false;
   private view: V = null;
   private model: T;
   private parent: Component<IModel,IView>;
@@ -57,9 +58,27 @@ export class Component<T extends IModel,V extends IView> {
     return this.view;
   }
 
-  refreshUI(): void {
+  init(){
+
+  }
+
+  paint(): any {
+    if (!this.initialized) {
+      this.init();
+      this.initialized = true;
+    }
+    return this.getUI().paint();
+  }
+
+  refresh(): void {
     if (this.view) {
+      this.sync();
       this.view.repaint();
     }
   }
+
+  sync(): void {
+
+  }
+
 }
