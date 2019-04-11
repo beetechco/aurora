@@ -8,6 +8,7 @@
   "scripts": {
     "test": "jest --watch",
     "build": "./node_modules/rollup/bin/rollup -c --config rollup.config.js",
+    "build-dev": "npm run build && npm link",
     "build-tsc": "tsc -p tsconfig.json",
     "watch": "./node_modules/rollup/bin/rollup -wc --config rollup.config.js",
     "build-example": "./node_modules/rollup/bin/rollup -c --config rollup-example.config.js",
