@@ -36,7 +36,6 @@
     "@babel/core": "^7.2.2",
     "@types/jest": "^23.3.10",
     "@types/react": "^16.7.18",
-    "barbero": "github:razueroh/barbero",
     "jest": "^23.6.0",
     "rollup": "^0.68.2",
     "rollup-plugin-babel": "^4.1.0",
